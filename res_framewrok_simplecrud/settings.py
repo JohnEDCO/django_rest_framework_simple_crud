@@ -21,10 +21,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-ib@)ure@nrh@2@+#=9n#=t8auvl4#o)yuapqc1d*mbptg=+8mg'
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
 DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = []
@@ -85,7 +83,6 @@ WSGI_APPLICATION = 'res_framewrok_simplecrud.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         default='sqlite:///db.sqlite3', 
-        # default='postgres://dbrestframe_user:2u1JFOquR9kLPKdfH0FGmbN6N5G2HtHa@dpg-cdvnpuirrk09es8ov4eg-a/dbrestframe', 
         conn_max_age=600
     )
 }
